@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkupOnline</title>   
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="container hero-container" data-aos="fade-right">
+          <div class="hero-text">
+              <h1 class="hero-title" >Скупка техники в Перми</h1>
+              <div class="animating-text">
+                  <span>Телефоны</span>
+                  <span>Ноутбуки</span>
+                  <span>Планшеты</span>
+                  <span>Бытовая техника</span>
+                  <span ><br><a href="#form-sell" class="anchor-button">Оформить заявку</a></span>                    
+              </div>
+          </div>
+      </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="margin-top: 15vh;" id="form-sell">Подать заявку на продажу товара</h1>
+            <form id="productForm" action="http://localhost:3000/submit-form" method="POST" enctype="multipart/form-data">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="product">Категория товара:</label>
+                <select id="product" name="product" required>
+                    <option value="phone">Телефон</option>
+                    <option value="tablet">Планшет</option>
+                    <option value="laptop">Ноутбук</option>
+                    <option value="appliance">Бытовая техника</option>
+                </select>
+                
+                <div id="specificTypeContainer" style="display: none;">
+                    <label for="specificType">Уточните вид товара:</label>
+                    <input type="text" id="specificType" name="specificType">
+                </div>
+                
+                <label for="model">Модель:</label>
+                <input type="text" id="model" name="model" required>
+                
+                <label for="condition">Состояние:</label>
+                <select id="condition" name="condition" required>
+                    <option value="new">Новый</option>
+                    <option value="used">Б/У</option>
+                </select>
+                
+                <label for="price">Цена:</label>
+                <input type="number" id="price" name="price" required>
+                
+                <label for="description">Описание:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+                
+                <label for="image">Изображение:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                
+                <button class="button-script" type="submit" style="color: aliceblue; border-radius: 15px;">Отправить</button>
+            </form>
+        </div>
+
+        <section class="advantages" style="background:#172d13; color: aliceblue; margin-top: 15vh;">
+            <div class="container">
+                <div class="container-flex">
+                    <div class="block1">
+                        <h2>Почему выбирают нас?</h2>
+                    </div>
+                    <div class="block2">
+                        <ul>
+                            <li>Быстрая оценка и скупка техники</li>
+                            <li>Высокие цены на выкуп</li>
+                            <li>Качественное обслуживание</li>
+                            <li>Удобное расположение в центре Перми</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>Отзывы наших клиентов</h2>
+                <div class="testimonial">
+                    <p>"Очень быстро оценили и выкупили мой старый ноутбук. Деньги получил в тот же день. Рекомендую!"</p>
+                    <span>- Ирина С.</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Приятный сервис и хорошие цены. Продавал телефон, остался доволен."</p>
+                    <span>- Алексей Т.</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Лучший сервис по скупке техники в Перми! Очень доволен качеством обслуживания."</p>
+                    <span>- Марина К.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
