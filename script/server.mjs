@@ -12,7 +12,7 @@ const port = 3000;
 const upload = multer({ dest: 'uploads/' });
 
 app.use(cors({
-    origin: 'http://127.0.0.1:5500/main.html' // Замените этот адрес на ваш фактический
+    origin: 'http://127.0.0.1:5500/index.html' 
 }));
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use('/style', express.static(path.join(path.resolve(), 'style')));
 app.use('/script', express.static(path.join(path.resolve(), 'script')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(path.resolve(), 'main.html'));
+    res.sendFile(path.join(path.resolve(), 'index.html'));
 });
 
 app.get('/confirmation', (req, res) => {
